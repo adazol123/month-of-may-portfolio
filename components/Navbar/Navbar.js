@@ -1,4 +1,7 @@
+import { useCallback, useEffect, useState } from 'react'
 import styles from '../../styles/Navbar.module.css'
+
+
 
 export const Navbar = (params) => {
     return (
@@ -20,10 +23,14 @@ const DarkMode = () => {
 }
 
 const Menu = (props) => {
+    const isBreakpoint = useMediaQuery(768)
     return (
         <div className={styles.nav_menu}>
             <div className={styles.nav_menu_icon}>
-                    <img src="./Assets/Menu.svg" alt="" />
+            <img height={isBreakpoint? '110px': '60px'} src="./Assets/button-back.svg" alt="" />
+            </div>
+            <div className={styles.nav_menu_icon_back}>
+                <img height={isBreakpoint? '25px': '15px'} src="./Assets/button-front.svg" alt="" />
             </div>
         </div>
     )
@@ -31,11 +38,16 @@ const Menu = (props) => {
 
 
 const Logo = () => {
+
+
+    const isBreakpoint = useMediaQuery(768)
+
     return (
         <div className={styles.nav_logo}>
         <div className={styles.nav_logo_icon}>
-            <img src="./Assets/Logo-adazolhub.svg" alt="adazolhub main logo" />
+            <img height={isBreakpoint? '60px': '40px'} src="./Assets/Logo-adazolhub.svg" alt="adazolhub main logo" />
         </div>
+        {isBreakpoint? 
         <div className={styles.nav_logo_name_wrapper}>  
             <div className={styles.nav_logo_name}>   
                 <img className={styles.letter} src="./Assets/logo/A.svg" alt="adazolhub main logo" />
@@ -50,6 +62,35 @@ const Logo = () => {
                 <img className={styles.letter} src="./Assets/logo/dot.svg" alt="adazolhub main logo" />
             </div>
         </div>
+        : ""}
     </div>
     )
 }
+
+
+
+export const useMediaQuery = (width) => {
+    const [targetReached, setTargetReached] = useState(false);
+  
+    const updateTarget = useCallback((e) => {
+      if (e.matches) {
+        setTargetReached(true);
+      } else {
+        setTargetReached(false);
+      }
+    }, []);
+  
+    useEffect(() => {
+      const media = window.matchMedia(`(min-width: ${width}px)`);
+      media.addListener(updateTarget);
+  
+      // Check on mount (callback is not called until a change occurs)
+      if (media.matches) {
+        setTargetReached(true);
+      }
+  
+      return () => media.removeListener(updateTarget);
+    }, []);
+  
+    return targetReached;
+  };

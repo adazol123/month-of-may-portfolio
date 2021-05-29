@@ -1,7 +1,7 @@
 .nav_container {
     width: 100%;
     max-width: 1200px;
-    min-height: 108px;
+    min-height: 68px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -21,6 +21,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 .nav_sidebar {
     display: flex;
@@ -57,6 +58,7 @@
 
 
 .nav_menu {
+    position: relative;
     border-style: none;
     margin-right: 1em;
     border-radius: 50px;
@@ -65,22 +67,44 @@
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
     background: transparent;
-
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+    cursor: pointer;
 }
 .nav_menu_icon {
-    cursor: pointer;
-    transition: transform .4s;
-    transform: scale(0.9);
-    -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    -o-transform: scale(0.9);
-    -webkit-transition: transform .4s;
-    -moz-transition: transform .4s;
-    -ms-transition: transform .4s;
-    -o-transition: transform .4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center center;
+    transform: scale(0.9) rotate(150deg);
+    -webkit-transform: scale(0.9) rotate(150deg);
+    -moz-transform: scale(0.9) rotate(150deg);
+    -ms-transform: scale(0.9) rotate(150deg);
+    -o-transform: scale(0.9) rotate(150deg);
+    transition: transform .8s;
 }
-.nav_menu_icon:hover {
+
+
+
+.nav_menu_icon_back {
+    position: absolute;
+    display: grid;
+    place-content: center;
+
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+
+    transition: transform .8s;
+}
+
+.nav_menu:hover .nav_menu_icon,
+.nav_menu:hover .nav_menu_icon_back{
     transform: scale(1);
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
@@ -88,3 +112,121 @@
     -o-transform: scale(1);
 }
 
+@media only screen and (min-width: 768px)  {
+    .nav_container {
+        width: 100%;
+        max-width: 1200px;
+        min-height: 108px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 10;
+        
+    }
+
+    .nav_wrapper {
+        width: 100%;
+        height: 100%;
+  }
+  
+  .navbar {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+  }
+  .nav_sidebar {
+      display: flex;
+      gap: 8px;
+  }
+  
+  .nav_logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 1em;
+      
+  }
+  
+  .nav_logo_icon {
+      padding-right: 1em;
+      display: flex;
+      align-items: center;
+  }
+  .nav_logo_name_wrapper{
+      display: flex;
+      margin-right: 1em;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .nav_logo_name {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.2em;
+  }
+  
+  /** End of Left sidebar */
+  
+  
+  .nav_menu {
+      position: relative;
+      border-style: none;
+      margin-right: 1em;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      -ms-border-radius: 50px;
+      -o-border-radius: 50px;
+      background: transparent;
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 11;
+      cursor: pointer;
+  }
+  .nav_menu_icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-origin: center center;
+      transform: scale(0.9) rotate(150deg);
+      -webkit-transform: scale(0.9) rotate(150deg);
+      -moz-transform: scale(0.9) rotate(150deg);
+      -ms-transform: scale(0.9) rotate(150deg);
+      -o-transform: scale(0.9) rotate(150deg);
+      transition: transform .8s;
+  }
+  
+  
+  
+  .nav_menu_icon_back {
+      position: absolute;
+      display: grid;
+      place-content: center;
+      transform: scale(0.8);
+      -webkit-transform: scale(0.8);
+      -moz-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      -o-transform: scale(0.8);
+      transition: transform .8s;
+      -webkit-transition: transform .8s;
+      -moz-transition: transform .8s;
+      -ms-transition: transform .8s;
+      -o-transition: transform .8s;
+}
+  
+  .nav_menu:hover .nav_menu_icon,
+  .nav_menu:hover .nav_menu_icon_back{
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+  }
+
+}

@@ -4,5 +4,6 @@ export const typewriter = [
     'ENTHUSIASTIC', 8000,
     'NOOB DREAMER', 8000,
     'TECH SAVY', 8000,
-    'TECH SUPPORT', 8000
+    'MUSIC LOVER', 8000,
+    'LONER', 8000
 ]

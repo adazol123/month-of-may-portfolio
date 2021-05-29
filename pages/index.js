@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Navbar } from '../components/Navbar/Navbar'
 import { Cover } from '../components/Cover/Cover'
+import { CanvasObject } from '../components/Canvas/CanvasObject'
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <main>
           <div className={styles.main_container}>
             <Cover/>
+              {/* <CanvasObject/> */}
           </div>
         </main>
     </div>

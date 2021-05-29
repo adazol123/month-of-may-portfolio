@@ -1,6 +1,7 @@
 import styles from '../../styles/Cover.module.css'
 import Typical from 'react-typical'
 import { typewriter } from './typingData'
+import { CanvasObject } from '../Canvas/CanvasObject'
 
 
 export const Cover = (params) => {
@@ -17,11 +18,13 @@ export const Cover = (params) => {
                             />
                         </div>
                         <div className={styles.heading_two}>
-                            <div>I'M A</div> 
-                            <Typical 
-                                steps={typewriter} 
-                                loop={Infinity}
-                                wrapper='div' />
+                            <div>IM A</div>
+                            <div className={styles.type}>
+                                <Typical 
+                                    steps={typewriter} 
+                                    loop={Infinity}
+                                    wrapper='div' />
+                            </div>
                         </div>
                         <div className={styles.heading_content}>
                         Wanna be a software engineer with background in computer hardware. I am currently working  with React JS, Next JS, Node JS, Figma Design and Blender for 3D graphics objects.
@@ -33,9 +36,8 @@ export const Cover = (params) => {
                 </div>
             </div>
 
-            <div id='webgl' className={styles.background}>
-                 sdsadsa
-
+            <div className={styles.background}>
+                <CanvasObject/>
             </div>
         </div>
     )
