@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.adazolhub.online">
-    <img src="./public/assets/Logo-adazolhub.svg" height="128">
+    <img src="./public/Assets/Logo-adazolhub.svg" height="128">
     <h1 align="center">Adazolhub </h1>
   </a>
 </p>
