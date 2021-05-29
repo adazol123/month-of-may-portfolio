@@ -24,8 +24,8 @@ function Points(props) {
     useFrame(({ mouse }) => {
         mesh.current.rotation.x = mesh.current.rotation.y += 0.00004
         mesh.current.position.z =  -(mouse.x * 0.004)
-        mesh.current.rotation.y +=  -(mouse.y * 0.008) 
-        mesh.current.rotation.z =  (mouse.y * 0.009) + mesh.current.rotation.y
+        mesh.current.rotation.y +=  -(mouse.y * 0.006) 
+        mesh.current.rotation.z =  (mouse.y * 0.005) + mesh.current.rotation.y
       })
     return (
         <points {...props} ref={mesh} 
@@ -38,6 +38,8 @@ function Points(props) {
             <sphereGeometry attach='geometry' args={[1, 32, 50]} />
             <pointsMaterial size={0.005}
                 attach='material'
+                color={'#108020'}
+                opacity={0.6}
                 // color= { hovered ? 'yellow' : '#108020'}
                 blending= {THREE.AdditiveBlending}   
 

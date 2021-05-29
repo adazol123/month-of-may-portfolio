@@ -11,7 +11,7 @@
 }
 
 .top_bar {
-  height: 8px;
+  height: 4px;
   width: 100%;
   background: linear-gradient(90deg, #34F7BE 0%, #5A88FD 105.78%);
 }
@@ -74,7 +74,7 @@
   }
   
   .top_bar {
-    height: 8px;
+    height: 4px;
     width: 100%;
     background: linear-gradient(90deg, #34F7BE 0%, #5A88FD 105.78%);
   }
