@@ -38,8 +38,7 @@ function Points(props) {
             <sphereGeometry attach='geometry' args={[1, 32, 50]} />
             <pointsMaterial size={0.005}
                 attach='material'
-                
-                color= { hovered ? 'yellow' : '#108020'}
+                // color= { hovered ? 'yellow' : '#108020'}
                 blending= {THREE.AdditiveBlending}   
 
             />
